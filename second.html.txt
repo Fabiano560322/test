@@ -1,8 +1,0 @@
-<html>
-<head>
-<tilte>Hello third modified</title>
-</head>
-<body>
-  Hello third modified
-</body>
-</html>
