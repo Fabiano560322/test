@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lan="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta carset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Proxy 代理物件基礎</title>
+    </head>
+    <body>
+        <script>
+        // 建立代理物件        
+           let data={
+            price:100,
+            count:5
+           };          
+           let proxy=new Proxy(data, {
+            get:function(target, property){  // 使用代理物件, 取得想要的資料的對應函式
+                console.log("目標物件 ",target);
+                //針對想要的資料, 透過牽涉到的屬性作運算來得到
+                if (property==="total"){
+                   return target.price*target.count;
+                }else{
+                   return target[property]; 
+                }
+            }                    
+           });
+           // 使用代理物件, 取得想要的資料 
+           console.log(proxy.price);
+        </script>
+    </body>
+</html>
